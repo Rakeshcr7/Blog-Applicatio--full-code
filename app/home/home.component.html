@@ -1,0 +1,38 @@
+<svg viewBox="0 0 1200 600">
+  <symbol id="s-text">
+    <text text-anchor="middle" x="50%" y="30%" class="webcoderskull">
+      Blog-APP by
+    </text>
+    <text text-anchor="middle" x="50%" y="85%" class="text--line">
+      Rakesh
+    </text>
+  </symbol>
+  <g class="g-ants">
+    <use xlink:href="#s-text" class="webcoderskull-1"></use>
+    <use xlink:href="#s-text" class="webcoderskull-1"></use>
+    <use xlink:href="#s-text" class="webcoderskull-1"></use>
+    <use xlink:href="#s-text" class="webcoderskull-1"></use>
+    <use xlink:href="#s-text" class="webcoderskull-1"></use>
+  </g>
+</svg>
+<br><br><br><br><br><br><br><br><br><br><br><br>
+<div class="container" style="text-align:center">
+  <div class="row">
+    <div *ngFor="let blog of allBlogs" class="col-12 card border-primary m-4" style="max-width: 19rem;">
+      <div class="card-header">
+        <i>Posted By : </i>
+        <b>{{blog.author | uppercase}}</b>
+      </div>
+      <div class="card-body">
+        <h6 class="card-title">Title : {{blog.title}}</h6>
+        <div class="panel-footer">Posted on:
+          <b>{{blog.created | date}}</b>
+          <br/> Category:
+          <b>{{blog.category}}</b>
+          <br/>
+          <br/>
+          <a [routerLink]="['/blog',blog.blogId]" class="btn btn-success">Read</a>
+        </div>
+      </div>
+    </div>
+  </div>
